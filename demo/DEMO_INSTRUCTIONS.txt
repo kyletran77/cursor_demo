@@ -1,0 +1,153 @@
+CURSOR DEBUGGING & TRACING DEMO SETUP
+======================================
+
+This folder contains a comprehensive debugging and error tracing demo designed 
+to showcase Cursor's debugging capabilities.
+
+STRUCTURE:
+----------
+demo/
+├── buggy_script.py           # Python script with intentional errors
+├── buggy_script.js           # JavaScript/Node.js script with intentional errors
+├── logging/                  # Log files directory
+│   ├── application.log       # Python application log with errors
+│   ├── javascript_errors.log # JavaScript errors log
+│   └── terminal_errors.log   # Terminal error capture
+└── DEMO_INSTRUCTIONS.txt     # This file
+
+ERROR TYPES INCLUDED:
+--------------------
+
+Python Script (buggy_script.py):
+• FileNotFoundError: Missing configuration files
+• ConnectionError: Network/API connection failures  
+• TypeError: Type mismatches and None handling
+• KeyError: Missing dictionary keys
+• JSONDecodeError: Invalid JSON parsing
+• PermissionError: File system permission issues
+• Database Errors: Connection and constraint violations
+
+JavaScript Script (buggy_script.js):
+• ReferenceError: Undefined variables
+• TypeError: Null/undefined property access
+• Network Errors: Failed HTTP requests, timeouts
+• JSON Parsing Errors: Invalid response parsing
+• File System Errors: Directory/file access issues
+• Memory Leaks: Circular references and excessive memory usage
+• Uncaught Exceptions: Unhandled promise rejections
+
+RUNNING THE DEMO:
+-----------------
+
+Prerequisites:
+    # For Python script
+    pip install requests
+    
+    # For JavaScript script (Node.js required)
+    node --version  # Should be v12+
+
+Execution:
+    # Run Python script (will generate errors)
+    python3 demo/buggy_script.py
+    
+    # Run JavaScript script (will generate errors)  
+    node demo/buggy_script.js
+
+LOG ANALYSIS:
+-------------
+
+View Error Counts:
+    grep -i error demo/logging/*.log | wc -l
+    
+Find Critical Errors:
+    grep -i critical demo/logging/*.log
+    
+Search for Specific Error Types:
+    grep -i "traceback\|stack" demo/logging/*.log
+
+Real-time Monitoring:
+    tail -f demo/logging/application.log
+    tail -f demo/logging/terminal_errors.log
+
+CURSOR DEMO SCENARIOS:
+----------------------
+
+1. ERROR DETECTION & NAVIGATION
+   - Open log files in Cursor
+   - Use Cursor's error highlighting to identify issues
+   - Jump to problematic line numbers in source files
+   - Demonstrate error pattern recognition
+
+2. STACK TRACE ANALYSIS
+   - Show how Cursor parses stack traces
+   - Navigate directly from logs to source code
+   - Identify root cause vs. symptom errors
+   - Follow error propagation chains
+
+3. CODE FIX SUGGESTIONS
+   - Let Cursor analyze the buggy code
+   - Generate fix suggestions for common errors
+   - Show before/after comparisons
+   - Demonstrate automated error resolution
+
+4. LOG PATTERN RECOGNITION
+   - Use Cursor to identify recurring error patterns
+   - Find correlations between different error types
+   - Generate summaries of error frequencies
+   - Create error categorization
+
+5. DEBUGGING WORKFLOW
+   - Start with error logs
+   - Trace back to source code
+   - Apply fixes
+   - Verify resolution
+   - Document the debugging process
+
+KEY FEATURES TO HIGHLIGHT:
+--------------------------
+
+Error Correlation:
+• Show how terminal errors relate to application logs
+• Demonstrate error cascading effects
+• Identify common failure patterns
+
+Code Context:
+• Use Cursor to explain error context
+• Show problematic code patterns
+• Suggest best practices and improvements
+
+Automated Analysis:
+• Let Cursor analyze the entire error log
+• Generate debugging recommendations
+• Create action items for error resolution
+
+PERFORMANCE ISSUES:
+-------------------
+The scripts also include:
+• Memory leaks (circular references)
+• Resource exhaustion (large object creation)
+• Timeout issues (network requests)
+• File system bottlenecks
+
+DEMO PRESENTATION FLOW:
+-----------------------
+
+1. SETUP: Show the buggy scripts and run them
+2. DISCOVERY: Open logs and identify error patterns
+3. ANALYSIS: Use Cursor to understand and categorize errors
+4. RESOLUTION: Demonstrate fix suggestions and implementations
+5. VERIFICATION: Show improved error handling and logging
+
+This demo provides a rich, realistic debugging environment that showcases 
+Cursor's capabilities in error analysis, code navigation, and automated 
+debugging assistance.
+
+EXPECTED BEHAVIOR:
+------------------
+• Scripts will crash with various errors
+• Log files will contain detailed error information
+• Some errors are intentionally unhandleable for demo purposes
+• Both scripts generate real errors that can be debugged
+
+The demo is ready to use! Run the scripts, examine the logs, and showcase 
+Cursor's debugging power. 

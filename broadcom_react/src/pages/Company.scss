@@ -1,0 +1,215 @@
+@import '../styles/variables';
+
+.company-page {
+  .hero {
+    background: linear-gradient(135deg, var(--broadcom-black) 0%, var(--broadcom-dark-gray) 100%);
+    color: var(--broadcom-white);
+
+    h1 {
+      color: var(--broadcom-white);
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+  }
+
+  .company-overview {
+    .large-text {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: var(--broadcom-dark-gray);
+      margin-bottom: $spacing-lg;
+    }
+
+    .stats-card {
+      background: var(--broadcom-light-gray);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+      height: fit-content;
+
+      h3 {
+        margin-bottom: $spacing-lg;
+        color: var(--broadcom-black);
+      }
+
+      .fact-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--broadcom-gray);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .fact-number {
+          font-size: 1.5rem;
+          font-weight: $font-weight-bold;
+          color: var(--broadcom-red);
+        }
+
+        .fact-label {
+          color: var(--broadcom-dark-gray);
+          font-weight: $font-weight-medium;
+        }
+      }
+    }
+  }
+
+  .leadership {
+    background: var(--broadcom-light-gray);
+
+    .leader-card {
+      text-align: center;
+      margin-bottom: $spacing-lg;
+
+      .leader-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: $border-radius-circle;
+        background: var(--broadcom-red);
+        color: var(--broadcom-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        margin: 0 auto 1rem;
+      }
+
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      .leader-title {
+        color: var(--broadcom-red);
+        font-weight: $font-weight-semibold;
+        margin-bottom: 1rem;
+      }
+
+      .leader-bio {
+        font-size: 0.95rem;
+        color: var(--broadcom-dark-gray);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .business-segments {
+    .segment-card {
+      background: var(--broadcom-white);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+      margin-bottom: $spacing-lg;
+      box-shadow: $shadow-sm;
+      height: 100%;
+
+      .segment-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: $border-radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: $font-weight-bold;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      .segment-products {
+        list-style: none;
+        margin: 1.5rem 0 0 0;
+        padding: 0;
+
+        li {
+          padding: 0.5rem 0;
+          color: var(--broadcom-dark-gray);
+          position: relative;
+          padding-left: 1.5rem;
+
+          &:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--broadcom-red);
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+  }
+
+  .values {
+    background: var(--broadcom-black);
+    color: var(--broadcom-white);
+
+    h2 {
+      color: var(--broadcom-white);
+    }
+
+    .value-item {
+      margin-bottom: $spacing-lg;
+
+      .value-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        color: var(--broadcom-white);
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: var(--broadcom-gray);
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .company-page {
+    .hero {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .company-overview {
+      .stats-card {
+        margin-top: $spacing-lg;
+      }
+    }
+
+    .leadership {
+      .leader-card {
+        .leader-avatar {
+          width: 80px;
+          height: 80px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .values {
+      .value-item {
+        .value-icon {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+} 

@@ -1,0 +1,180 @@
+kyletran@MacBook-Pro demo % python3 buggy_script.py
+2024-01-15T10:45:23.456Z - INFO - === Starting Buggy Application Demo ===
+2024-01-15T10:45:23.457Z - INFO - Loading configuration file...
+2024-01-15T10:45:23.458Z - ERROR - Configuration file not found: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15T10:45:23.459Z - CRITICAL - Application crashed with error: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15T10:45:23.459Z - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 45, in load_config
+    with open('config/app_config.json', 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'config/app_config.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 138, in main
+    processor.load_config()
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 47, in load_config
+    raise
+FileNotFoundError: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15T10:45:23.460Z - INFO - Cleaning up temporary files...
+2024-01-15T10:45:23.461Z - WARNING - Temp file not found: /tmp/nonexistent_file.tmp
+2024-01-15T10:45:23.461Z - WARNING - Temp file not found: /tmp/another_missing_file.tmp
+2024-01-15T10:45:23.462Z - WARNING - Temp file not found: /tmp/permission_denied.tmp
+2024-01-15T10:45:23.462Z - INFO - === Application Demo Completed ===
+
+kyletran@MacBook-Pro demo % node buggy_script.js
+2024-01-15T11:30:42.123Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T11:30:42.124Z - INFO - Loading web application configuration...
+2024-01-15T11:30:42.125Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T11:30:42.126Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+    at BuggyWebApp.loadConfiguration (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:28:35)
+    at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:161:21)
+    at Object.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:198:5)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:960:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/run_main:81:12)
+    at node:internal/main/run_main_module:23:47
+2024-01-15T11:30:42.127Z - INFO - Processing user data...
+2024-01-15T11:30:42.128Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toUpperCase')
+2024-01-15T11:30:42.129Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toUpperCase')
+    at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:42:33
+    at Array.map (<anonymous>)
+    at BuggyWebApp.processUserData (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:38:46)
+    at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:173:38)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+kyletran@MacBook-Pro demo % python3 buggy_script.py 2>&1 | tee error_output.txt
+ModuleNotFoundError: No module named 'requests'
+
+  The above exception was the direct cause of the following exception:
+
+  Traceback (most recent call last):
+    File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 4, in <module>
+      import requests
+  ModuleNotFoundError: No module named 'requests'
+
+kyletran@MacBook-Pro demo % pip install requests
+Collecting requests
+  Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 1.2 MB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.3.2-cp311-cp311-macosx_11_0_arm64.whl (118 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.8/118.8 kB 3.4 MB/s eta 0:00:00
+Collecting idna<4,>=2.5
+  Downloading idna-3.6-py3-none-any.whl (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 kB 2.1 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.21.1
+  Downloading urllib3-2.1.0-py3-none-any.whl (104 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 104.6/104.6 kB 3.1 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17
+  Downloading certifi-2023.11.17-py3-none-any.whl (162 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.5/162.5 kB 4.3 MB/s eta 0:00:00
+Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+Successfully installed certifi-2023.11.17 charset-normalizer-3.3.2 idna-3.6 requests-2.31.0 urllib3-2.1.0
+
+kyletran@MacBook-Pro demo % python3 buggy_script.py
+2024-01-15T12:15:33.789Z - INFO - === Starting Buggy Application Demo ===
+2024-01-15T12:15:33.790Z - INFO - Loading configuration file...
+2024-01-15T12:15:33.791Z - ERROR - Configuration file not found: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15T12:15:33.792Z - CRITICAL - Application crashed with error: [Errno 2] No such file or directory: 'config/app_config.json'
+
+kyletran@MacBook-Pro demo % ls -la
+total 16
+drwxr-xr-x   5 kyletran  staff   160 Jan 15 12:15 .
+drwxr-xr-x  12 kyletran  staff   384 Jan 15 10:45 ..
+-rwxr-xr-x   1 kyletran  staff  4521 Jan 15 10:45 buggy_script.js
+-rwxr-xr-x   1 kyletran  staff  5832 Jan 15 10:45 buggy_script.py
+drwxr-xr-x   4 kyletran  staff   128 Jan 15 10:45 logging
+
+kyletran@MacBook-Pro demo % chmod +x buggy_script.py
+kyletran@MacBook-Pro demo % chmod +x buggy_script.js
+
+kyletran@MacBook-Pro demo % ./buggy_script.py
+/usr/bin/env: 'python3': No such file or directory
+
+kyletran@MacBook-Pro demo % which python3
+/opt/homebrew/bin/python3
+
+kyletran@MacBook-Pro demo % head -1 buggy_script.py
+#!/usr/bin/env python3
+
+kyletran@MacBook-Pro demo % /opt/homebrew/bin/python3 buggy_script.py
+2024-01-15T14:22:11.456Z - INFO - === Starting Buggy Application Demo ===
+2024-01-15T14:22:11.457Z - INFO - Loading configuration file...
+2024-01-15T14:22:11.458Z - ERROR - Configuration file not found: [Errno 2] No such file or directory: 'config/app_config.json'
+Fatal Python error: Segmentation fault
+
+Current thread 0x00000001f4567890 (most recent call first):
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 45, in load_config
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 138, in main
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 153, in <module>
+[1]    12345 segmentation fault  /opt/homebrew/bin/python3 buggy_script.py
+
+kyletran@MacBook-Pro demo % node --version
+v18.17.0
+
+kyletran@MacBook-Pro demo % node buggy_script.js
+2024-01-15T15:10:22.123Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T15:10:22.124Z - INFO - Loading web application configuration...
+2024-01-15T15:10:22.125Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T15:10:22.126Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+    at BuggyWebApp.loadConfiguration (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:28:35)
+    at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:161:21)
+2024-01-15T15:10:22.127Z - INFO - Processing user data...
+2024-01-15T15:10:22.128Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toUpperCase')
+2024-01-15T15:10:22.129Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toUpperCase')
+    at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:42:33
+    at Array.map (<anonymous>)
+2024-01-15T15:10:22.130Z - INFO - Fetching data from external APIs...
+2024-01-15T15:10:22.234Z - CRITICAL - External data error: Error: Request failed for https://jsonplaceholder.typicode.com/nonexistent: getaddrinfo ENOTFOUND jsonplaceholder.typicode.com
+    at ClientRequest.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:75:25)
+    at ClientRequest.emit (node:events:513:28)
+    at Socket.socketErrorHandler (node:_http_client:502:9)
+    at Socket.emit (node:events:513:28)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2024-01-15T15:10:22.235Z - WARNING - Created potential memory leak with 100000 objects
+2024-01-15T15:10:22.236Z - INFO - === Buggy JavaScript Application Demo Completed ===
+
+node:internal/process/warning:214
+(node:12346) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 error listeners added to [TLSSocket]. Use emitter.setMaxListeners() to increase limit.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+kyletran@MacBook-Pro demo % docker run --rm -v $(pwd):/app -w /app python:3.11-slim python buggy_script.py
+Unable to find image 'python:3.11-slim' locally
+3.11-slim: Pulling from library/python
+e4d61adff207: Pull complete 
+4ff1945c672b: Pull complete 
+ff5b10aec998: Pull complete 
+12de8c754e45: Pull complete 
+b5f3652aff32: Pull complete 
+Digest: sha256:8d33f5150b82e01ca2d632c2f98c5f52d5c21d8e9e2cc66e54c4f5b3d7e12e1a
+Status: Downloaded newer image for python:3.11-slim
+Traceback (most recent call last):
+  File "/app/buggy_script.py", line 4, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+
+kyletran@MacBook-Pro demo % tail -f logging/application.log
+2024-01-15 18:45:25,240 - __main__ - INFO - Cleaning up temporary files...
+2024-01-15 18:45:25,241 - __main__ - WARNING - Temp file not found: /tmp/nonexistent_file.tmp
+2024-01-15 18:45:25,242 - __main__ - WARNING - Temp file not found: /tmp/another_missing_file.tmp
+2024-01-15 18:45:25,243 - ERROR - Permission denied removing: /tmp/permission_denied.tmp
+2024-01-15 18:45:25,244 - __main__ - INFO - === Application Demo Completed ===
+^C
+
+kyletran@MacBook-Pro demo % grep -i error logging/*.log | wc -l
+      42
+
+kyletran@MacBook-Pro demo % grep -i critical logging/*.log
+logging/application.log:2024-01-15 10:45:23,459 - __main__ - CRITICAL - Application crashed with error: [Errno 2] No such file or directory: 'config/app_config.json'
+logging/application.log:2024-01-15 11:20:20,235 - __main__ - CRITICAL - Application crashed with error: HTTPSConnectionPool(host='api.nonexistent-service.com', port=443): Max retries exceeded with url: /v1/data (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10e5a7d90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+logging/application.log:2024-01-15 14:33:47,906 - __main__ - CRITICAL - Application crashed with error: argument of type 'NoneType' is not iterable
+logging/application.log:2024-01-15 15:15:38,572 - __main__ - CRITICAL - Application crashed with error: Duplicate key violation: user already exists
+logging/application.log:2024-01-15 16:42:11,237 - __main__ - CRITICAL - Application crashed with error: Expecting ',' delimiter: line 15 column 5 (char 234)
+logging/application.log:2024-01-15 17:29:00,790 - __main__ - CRITICAL - Application crashed with error: HTTPSConnectionPool(host='api.slow-service.com', port=443): Read timed out. (read timeout=5)
+logging/application.log:2024-01-15 18:45:25,238 - __main__ - CRITICAL - Application crashed with error: Database URL not configured 

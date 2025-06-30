@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.floating-card {
+  position: absolute;
+  background: var(--broadcom-white);
+  padding: 1.5rem;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-xl;
+  min-width: 200px;
+
+  h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--broadcom-black);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--broadcom-dark-gray);
+  }
+
+  &.card-1 {
+    top: 10%;
+    left: 10%;
+  }
+
+  &.card-2 {
+    top: 40%;
+    right: 10%;
+  }
+
+  &.card-3 {
+    bottom: 10%;
+    left: 20%;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .floating-card {
+    position: relative !important;
+    margin: 1rem 0;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+} 

@@ -1,0 +1,104 @@
+2024-01-15T11:30:42.123Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T11:30:42.124Z - INFO - Loading web application configuration...
+2024-01-15T11:30:42.125Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T11:30:42.126Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined at BuggyWebApp.loadConfiguration (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:28:35) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:161:21) at Object.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:198:5) at Module._compile (node:internal/modules/cjs/loader:1256:14) at Object.Module._extensions..js (node:internal/modules/cjs/loader:1310:10) at Module.load (node:internal/modules/cjs/loader:1119:32) at Function.Module._load (node:internal/modules/cjs/loader:960:12) at Function.executeUserEntryPoint [as runMain] (node:internal/run_main:81:12) at node:internal/main/run_main_module:23:47
+2024-01-15T11:30:42.127Z - INFO - Processing user data...
+2024-01-15T11:30:42.128Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toUpperCase')
+2024-01-15T11:30:42.129Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toUpperCase') at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:42:33 at Array.map (<anonymous>) at BuggyWebApp.processUserData (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:38:46) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:173:38) at processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-01-15T11:30:42.130Z - INFO - Fetching data from external APIs...
+2024-01-15T11:30:42.234Z - CRITICAL - External data error: Error: Request timeout for https://jsonplaceholder.typicode.com/nonexistent
+2024-01-15T11:30:42.235Z - WARNING - Created potential memory leak with 100000 objects
+2024-01-15T11:30:42.236Z - INFO - === Buggy JavaScript Application Demo Completed ===
+
+2024-01-15T15:10:22.123Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T15:10:22.124Z - INFO - Loading web application configuration...
+2024-01-15T15:10:22.125Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T15:10:22.126Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined at BuggyWebApp.loadConfiguration (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:28:35) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:161:21)
+2024-01-15T15:10:22.127Z - INFO - Processing user data...
+2024-01-15T15:10:22.128Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toUpperCase')
+2024-01-15T15:10:22.129Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toUpperCase') at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:42:33 at Array.map (<anonymous>)
+2024-01-15T15:10:22.130Z - INFO - Fetching data from external APIs...
+2024-01-15T15:10:22.134Z - ERROR - Request failed for https://api.invalid-domain-12345.com/data: getaddrinfo ENOTFOUND api.invalid-domain-12345.com
+2024-01-15T15:10:22.234Z - CRITICAL - External data error: Error: Request failed for https://jsonplaceholder.typicode.com/nonexistent: getaddrinfo ENOTFOUND jsonplaceholder.typicode.com at ClientRequest.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:75:25) at ClientRequest.emit (node:events:513:28) at Socket.socketErrorHandler (node:_http_client:502:9) at Socket.emit (node:events:513:28) at emitErrorNT (node:internal/streams/destroy:157:8) at emitErrorCloseNT (node:internal/streams/destroy:122:3) at processTicksAndRejections (node:internal/process/task_queues:83:21)
+2024-01-15T15:10:22.235Z - WARNING - Created potential memory leak with 100000 objects
+2024-01-15T15:10:22.236Z - INFO - === Buggy JavaScript Application Demo Completed ===
+
+2024-01-15T16:25:11.456Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T16:25:11.457Z - INFO - Loading web application configuration...
+2024-01-15T16:25:11.458Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T16:25:11.459Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+2024-01-15T16:25:11.460Z - INFO - Processing user data...
+2024-01-15T16:25:11.461Z - ERROR - User data processing failed: Cannot read properties of undefined (reading 'split')
+2024-01-15T16:25:11.462Z - CRITICAL - Application error: TypeError: Cannot read properties of undefined (reading 'split') at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:45:35 at Array.map (<anonymous>) at BuggyWebApp.processUserData (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:38:46) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:173:38) at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+2024-01-15T17:42:33.789Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T17:42:33.790Z - INFO - Loading web application configuration...
+2024-01-15T17:42:33.791Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T17:42:33.792Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+2024-01-15T17:42:33.793Z - INFO - Processing user data...
+2024-01-15T17:42:33.794Z - ERROR - User data processing failed: Cannot read properties of undefined (reading 'avatar')
+2024-01-15T17:42:33.795Z - CRITICAL - Application error: TypeError: Cannot read properties of undefined (reading 'avatar') at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:47:44 at Array.map (<anonymous>) at BuggyWebApp.processUserData (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:38:46) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:173:38)
+
+2024-01-15T18:33:15.123Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T18:33:15.124Z - INFO - Loading web application configuration...
+2024-01-15T18:33:15.125Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T18:33:15.126Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+2024-01-15T18:33:15.127Z - INFO - Processing user data...
+2024-01-15T18:33:15.128Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toUpperCase')
+2024-01-15T18:33:15.129Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toUpperCase')
+2024-01-15T18:33:15.130Z - INFO - Fetching data from external APIs...
+2024-01-15T18:33:15.234Z - ERROR - JSON parsing failed for https://httpstat.us/500: Unexpected token '<' at position 0
+2024-01-15T18:33:15.235Z - CRITICAL - External data error: Error: JSON parsing failed for https://httpstat.us/500: Unexpected token '<' at position 0
+2024-01-15T18:33:15.236Z - WARNING - Created potential memory leak with 100000 objects
+2024-01-15T18:33:15.237Z - INFO - === Buggy JavaScript Application Demo Completed ===
+
+2024-01-15T19:15:45.678Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2024-01-15T19:15:45.679Z - INFO - Loading web application configuration...
+2024-01-15T19:15:45.680Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2024-01-15T19:15:45.681Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+2024-01-15T19:15:45.682Z - INFO - Processing user data...
+2024-01-15T19:15:45.683Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toLowerCase')
+2024-01-15T19:15:45.684Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toLowerCase') at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:43:33 at Array.map (<anonymous>) at BuggyWebApp.processUserData (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:38:46) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:173:38) at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+2024-01-15T20:08:22.345Z - FATAL - Uncaught Exception: Error: ENOENT: no such file or directory, open '/nonexistent/directory/user_report.json' at Object.openSync (fs.js:498:3) at Object.writeFileSync (fs.js:1633:35) at BuggyWebApp.saveReport (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:126:16) at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:176:21) at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+2024-01-15T20:22:11.567Z - FATAL - Unhandled Rejection at: Promise { <rejected> Error: Request timeout for https://api.invalid-domain-12345.com/data }, reason: Error: Request timeout for https://api.invalid-domain-12345.com/data 2025-06-29T00:30:40.162Z - INFO - === Starting Buggy JavaScript Application Demo ===
+2025-06-29T00:30:40.166Z - INFO - Loading web application configuration...
+2025-06-29T00:30:40.166Z - ERROR - Configuration loading failed: nonExistentVariable is not defined
+2025-06-29T00:30:40.167Z - CRITICAL - Configuration error: ReferenceError: nonExistentVariable is not defined
+    at BuggyWebApp.loadConfiguration (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:29:32)
+    at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:160:13)
+    at Object.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:220:5)
+    at Module._compile (node:internal/modules/cjs/loader:1572:14)
+    at Object..js (node:internal/modules/cjs/loader:1709:10)
+    at Module.load (node:internal/modules/cjs/loader:1315:32)
+    at Function._load (node:internal/modules/cjs/loader:1125:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:216:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+2025-06-29T00:30:40.167Z - INFO - Processing user data...
+2025-06-29T00:30:40.167Z - ERROR - User data processing failed: Cannot read properties of null (reading 'toUpperCase')
+2025-06-29T00:30:40.167Z - CRITICAL - Application error: TypeError: Cannot read properties of null (reading 'toUpperCase')
+    at /Users/kyletran/Documents/Broadcom/demo/buggy_script.js:45:37
+    at Array.map (<anonymous>)
+    at BuggyWebApp.processUserData (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:42:45)
+    at main (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:173:36)
+    at Object.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:220:5)
+    at Module._compile (node:internal/modules/cjs/loader:1572:14)
+    at Object..js (node:internal/modules/cjs/loader:1709:10)
+    at Module.load (node:internal/modules/cjs/loader:1315:32)
+    at Function._load (node:internal/modules/cjs/loader:1125:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-06-29T00:30:40.167Z - INFO - Fetching data from external APIs...
+2025-06-29T00:30:40.275Z - ERROR - External data fetching failed: Request failed for https://api.invalid-domain-12345.com/data: getaddrinfo ENOTFOUND api.invalid-domain-12345.com
+2025-06-29T00:30:40.276Z - CRITICAL - External data error: Error: Request failed for https://api.invalid-domain-12345.com/data: getaddrinfo ENOTFOUND api.invalid-domain-12345.com
+    at ClientRequest.<anonymous> (/Users/kyletran/Documents/Broadcom/demo/buggy_script.js:83:32)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:103:11)
+    at TLSSocket.socketErrorListener (node:_http_client:506:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-06-29T00:30:40.594Z - WARNING - Created potential memory leak with 100000 objects
+2025-06-29T00:30:40.595Z - INFO - === Buggy JavaScript Application Demo Completed ===

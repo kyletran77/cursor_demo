@@ -1,0 +1,223 @@
+2024-01-15 10:45:23,456 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 10:45:23,457 - __main__ - INFO - Loading configuration file...
+2024-01-15 10:45:23,458 - __main__ - ERROR - Configuration file not found: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15 10:45:23,459 - __main__ - CRITICAL - Application crashed with error: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15 10:45:23,459 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 45, with open('config/app_config.json', 'r') as f:
+    self.config = json.load(f)
+FileNotFoundError: [Errno 2] No such file or directory: 'config/app_config.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 138, in main
+    processor.load_config()
+  File "demo/buggy_script.py", line 47, in load_config
+    raise
+FileNotFoundError: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15 10:45:23,460 - __main__ - INFO - Cleaning up temporary files...
+2024-01-15 10:45:23,461 - __main__ - WARNING - Temp file not found: /tmp/nonexistent_file.tmp
+2024-01-15 10:45:23,461 - __main__ - WARNING - Temp file not found: /tmp/another_missing_file.tmp
+2024-01-15 10:45:23,462 - __main__ - WARNING - Temp file not found: /tmp/permission_denied.tmp
+2024-01-15 10:45:23,462 - __main__ - INFO - === Application Demo Completed ===
+
+2024-01-15 11:20:15,123 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 11:20:15,124 - __main__ - INFO - Loading configuration file...
+2024-01-15 11:20:15,125 - __main__ - ERROR - Configuration file not found: [Errno 2] No such file or directory: 'config/app_config.json'
+2024-01-15 11:20:15,126 - __main__ - INFO - Fetching data from API...
+2024-01-15 11:20:20,234 - __main__ - ERROR - Failed to connect to API: HTTPSConnectionPool(host='api.nonexistent-service.com', port=443): Max retries exceeded with url: /v1/data (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10e5a7d90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2024-01-15 11:20:20,235 - __main__ - CRITICAL - Application crashed with error: HTTPSConnectionPool(host='api.nonexistent-service.com', port=443): Max retries exceeded with url: /v1/data (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10e5a7d90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2024-01-15 11:20:20,236 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/local/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/usr/local/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+OSError: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 403, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1053, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x10e5a7d90>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 798, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.nonexistent-service.com', port=443): Max retries exceeded with url: /v1/data (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10e5a7d90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 141, in main
+    api_data = processor.fetch_api_data()
+  File "demo/buggy_script.py", line 60, in fetch_api_data
+    response.raise_for_status()
+  File "/usr/local/lib/python3.11/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.nonexistent-service.com', port=443): Max retries exceeded with url: /v1/data (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10e5a7d90>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+2024-01-15 11:20:20,237 - __main__ - INFO - Cleaning up temporary files...
+2024-01-15 11:20:20,238 - __main__ - WARNING - Temp file not found: /tmp/nonexistent_file.tmp
+2024-01-15 11:20:20,238 - __main__ - WARNING - Temp file not found: /tmp/another_missing_file.tmp
+2024-01-15 11:20:20,239 - __main__ - WARNING - Temp file not found: /tmp/permission_denied.tmp
+2024-01-15 11:20:20,239 - __main__ - INFO - === Application Demo Completed ===
+
+2024-01-15 14:33:42,789 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 14:33:42,790 - __main__ - INFO - Loading configuration file...
+2024-01-15 14:33:42,791 - __main__ - INFO - Configuration loaded successfully
+2024-01-15 14:33:42,792 - __main__ - INFO - Fetching data from API...
+2024-01-15 14:33:47,903 - __main__ - ERROR - HTTP error occurred: 401 Client Error: Unauthorized for url: https://api.service.com/v1/data
+2024-01-15 14:33:47,904 - __main__ - INFO - Processing data...
+2024-01-15 14:33:47,905 - __main__ - ERROR - Type error during data processing: argument of type 'NoneType' is not iterable
+2024-01-15 14:33:47,906 - __main__ - CRITICAL - Application crashed with error: argument of type 'NoneType' is not iterable
+2024-01-15 14:33:47,907 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 144, in main
+    processed_data = processor.process_data(api_data)
+  File "demo/buggy_script.py", line 76, in process_data
+    for item in data['items']:
+TypeError: argument of type 'NoneType' is not iterable
+
+2024-01-15 15:15:33,456 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 15:15:33,457 - __main__ - INFO - Loading configuration file...
+2024-01-15 15:15:33,458 - __main__ - INFO - Configuration loaded successfully
+2024-01-15 15:15:33,459 - __main__ - INFO - Fetching data from API...
+2024-01-15 15:15:38,567 - __main__ - INFO - Processing data...
+2024-01-15 15:15:38,568 - __main__ - ERROR - Missing required key in data: 'nonexistent_key'
+2024-01-15 15:15:38,569 - __main__ - INFO - Saving data to database...
+2024-01-15 15:15:38,570 - __main__ - DEBUG - Executing query: INSERT INTO users VALUES ('John Doe', 'john@example.com')
+2024-01-15 15:15:38,571 - __main__ - ERROR - Database constraint violation: Duplicate key violation: user already exists
+2024-01-15 15:15:38,572 - __main__ - CRITICAL - Application crashed with error: Duplicate key violation: user already exists
+2024-01-15 15:15:38,573 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 147, in main
+    processor.save_to_database(processed_data[0])
+  File "demo/buggy_script.py", line 108, in save_to_database
+    raise ValueError("Duplicate key violation: user already exists")
+ValueError: Duplicate key violation: user already exists
+
+2024-01-15 16:42:11,234 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 16:42:11,235 - __main__ - INFO - Loading configuration file...
+2024-01-15 16:42:11,236 - __main__ - ERROR - Invalid JSON in configuration file: Expecting ',' delimiter: line 15 column 5 (char 234)
+2024-01-15 16:42:11,237 - __main__ - CRITICAL - Application crashed with error: Expecting ',' delimiter: line 15 column 5 (char 234)
+2024-01-15 16:42:11,238 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 45, in load_config
+    self.config = json.load(f)
+  File "/usr/local/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/usr/local/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 15 column 5 (char 234)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 138, in main
+    processor.load_config()
+  File "demo/buggy_script.py", line 49, in load_config
+    raise
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 15 column 5 (char 234)
+
+2024-01-15 17:28:55,678 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 17:28:55,679 - __main__ - INFO - Loading configuration file...
+2024-01-15 17:28:55,680 - __main__ - INFO - Configuration loaded successfully
+2024-01-15 17:28:55,681 - __main__ - INFO - Fetching data from API...
+2024-01-15 17:29:00,789 - __main__ - ERROR - API request timed out: HTTPSConnectionPool(host='api.slow-service.com', port=443): Read timed out. (read timeout=5)
+2024-01-15 17:29:00,790 - __main__ - CRITICAL - Application crashed with error: HTTPSConnectionPool(host='api.slow-service.com', port=443): Read timed out. (read timeout=5)
+2024-01-15 17:29:00,791 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.11/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.11/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 798, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.11/site-packages/urllib3/util/retry.py", line 525, in increment
+    raise ReadTimeoutError(self._pool, url, "Read timed out.")
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.slow-service.com', port=443): Read timed out. (read timeout=5)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 141, in main
+    api_data = processor.fetch_api_data()
+  File "demo/buggy_script.py", line 65, in fetch_api_data
+    raise
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.slow-service.com', port=443): Read timed out. (read timeout=5)
+
+2024-01-15 18:45:20,123 - __main__ - INFO - === Starting Buggy Application Demo ===
+2024-01-15 18:45:20,124 - __main__ - INFO - Loading configuration file...
+2024-01-15 18:45:20,125 - __main__ - INFO - Configuration loaded successfully
+2024-01-15 18:45:20,126 - __main__ - INFO - Fetching data from API...
+2024-01-15 18:45:25,234 - __main__ - INFO - Processing data...
+2024-01-15 18:45:25,235 - __main__ - INFO - Processed 3 items successfully
+2024-01-15 18:45:25,236 - __main__ - INFO - Saving data to database...
+2024-01-15 18:45:25,237 - __main__ - ERROR - Database connection failed: Database URL not configured
+2024-01-15 18:45:25,238 - __main__ - CRITICAL - Application crashed with error: Database URL not configured
+2024-01-15 18:45:25,239 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "demo/buggy_script.py", line 147, in main
+    processor.save_to_database(processed_data[0])
+  File "demo/buggy_script.py", line 100, in save_to_database
+    raise ConnectionError("Database URL not configured")
+ConnectionError: Database URL not configured
+
+2024-01-15 18:45:25,240 - __main__ - INFO - Cleaning up temporary files...
+2024-01-15 18:45:25,241 - __main__ - WARNING - Temp file not found: /tmp/nonexistent_file.tmp
+2024-01-15 18:45:25,242 - __main__ - WARNING - Temp file not found: /tmp/another_missing_file.tmp
+2024-01-15 18:45:25,243 - __main__ - ERROR - Permission denied removing: /tmp/permission_denied.tmp
+2024-01-15 18:45:25,244 - __main__ - INFO - === Application Demo Completed === 2025-06-28 17:30:34,702 - __main__ - INFO - === Starting Buggy Application Demo ===
+2025-06-28 17:30:34,702 - __main__ - INFO - Loading configuration file...
+2025-06-28 17:30:34,702 - __main__ - ERROR - Configuration file not found: [Errno 2] No such file or directory: 'config/app_config.json'
+2025-06-28 17:30:34,702 - __main__ - CRITICAL - Application crashed with error: [Errno 2] No such file or directory: 'config/app_config.json'
+2025-06-28 17:30:34,702 - __main__ - ERROR - Full traceback:
+Traceback (most recent call last):
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 145, in main
+    processor.load_config()
+  File "/Users/kyletran/Documents/Broadcom/demo/buggy_script.py", line 34, in load_config
+    with open('config/app_config.json', 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config/app_config.json'
+2025-06-28 17:30:34,702 - __main__ - INFO - Cleaning up temporary files...
+2025-06-28 17:30:34,702 - __main__ - WARNING - Temp file not found: /tmp/nonexistent_file.tmp
+2025-06-28 17:30:34,703 - __main__ - WARNING - Temp file not found: /tmp/another_missing_file.tmp
+2025-06-28 17:30:34,703 - __main__ - WARNING - Temp file not found: /tmp/permission_denied.tmp
+2025-06-28 17:30:34,703 - __main__ - INFO - === Application Demo Completed ===

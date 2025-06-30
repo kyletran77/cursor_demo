@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+
+.footer {
+  background: var(--broadcom-black);
+  color: var(--broadcom-white);
+  padding: $spacing-xl 0 $spacing-sm;
+
+  h5 {
+    color: var(--broadcom-white);
+    margin-bottom: $spacing-sm;
+    font-weight: $font-weight-semibold;
+  }
+
+  .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: $spacing-xs;
+
+      a {
+        color: var(--broadcom-gray);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color $transition-normal;
+
+        &:hover {
+          color: var(--broadcom-white);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: $spacing-lg;
+    padding-top: $spacing-lg;
+    border-top: 1px solid var(--broadcom-dark-gray);
+    color: var(--broadcom-gray);
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .footer {
+    .row > div {
+      margin-bottom: $spacing-lg;
+    }
+  }
+} 
